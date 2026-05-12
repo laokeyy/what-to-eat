@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「这顿吃什么」布局方案对比</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 2rem; }
+h1 { font-size: 1.4rem; margin-bottom: 0.3rem; }
+.subtitle { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 1100px; }
+.option { background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; position: relative; }
+.option:hover { border-color: #ff6b35; }
+.option.selected { border-color: #ff6b35; background: #1f1a16; box-shadow: 0 0 0 3px rgba(255,107,53,0.2); }
+.option.selected::after { content: '✓ 已选'; position: absolute; top: 12px; right: 16px; color: #ff6b35; font-size: 0.85rem; font-weight: 600; }
+.letter { display: inline-block; background: #ff6b35; color: #fff; width: 32px; height: 32px; border-radius: 8px; text-align: center; line-height: 32px; font-weight: 700; margin-bottom: 0.8rem; }
+.option h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #fff; }
+.option > p { color: #aaa; font-size: 0.88rem; line-height: 1.5; margin-bottom: 1rem; }
+.pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; font-size: 0.82rem; }
+.pros-cons h4 { font-size: 0.78rem; margin-bottom: 0.3rem; color: #ccc; }
+.pros { color: #4ade80; }
+.cons { color: #f87171; }
+.pros-cons ul { padding-left: 1rem; }
+.pros-cons li { margin-bottom: 0.2rem; }
+.recommended { position: absolute; top: -10px; left: 16px; background: #ff6b35; color: #fff; font-size: 0.7rem; padding: 3px 10px; border-radius: 10px; font-weight: 600; }
+.footer { margin-top: 2rem; color: #666; font-size: 0.82rem; }
+@media (max-width: 700px) { .options { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>🍜 「这顿吃什么」— 整体布局方案对比</h1>
+<p class="subtitle">16个功能如何组织？哪种导航结构更适合？点击卡片选中你倾向的方案</p>
+<div class="options">
+  <div class="option" onclick="select(this)" data-choice="a">
+    <div class="letter">A</div>
+    <h3>单页滚动流</h3>
+    <p>所有功能一个长页面，打开即进入问答流程。底部Tab切管理页。类似抖音沉浸感。</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>✅ 优点</h4><ul><li>打开即用，零学习</li><li>沉浸式体验</li><li>移动端友好</li></ul></div>
+      <div class="cons"><h4>❌ 缺点</h4><ul><li>功能多时拥挤</li><li>桌面端利用率低</li></ul></div>
+    </div>
+  </div>
+  <div class="option" onclick="select(this)" data-choice="b">
+    <div class="letter">B</div>
+    <h3>底部5Tab导航</h3>
+    <p>🎲选饭吃 / 📋食谱 / ⚙️规则 / 👤我的 / 🔮发现。移动端优先，类似美团结构。</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>✅ 优点</h4><ul><li>功能分区清晰</li><li>用户心智模型熟悉</li><li>每Tab独立状态</li></ul></div>
+      <div class="cons"><h4>❌ 缺点</h4><ul><li>非主Tab打开率低</li><li>切Tab打断上下文</li></ul></div>
+    </div>
+  </div>
+  <div class="option" onclick="select(this)" data-choice="c">
+    <div class="letter">C</div>
+    <h3>侧边栏 + 主内容区</h3>
+    <p>左侧垂直导航栏，右侧大内容区。桌面端优先，响应式适配移动端。</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>✅ 优点</h4><ul><li>桌面端体验最佳</li><li>导航不占主区域</li><li>扩展性强</li></ul></div>
+      <div class="cons"><h4>❌ 缺点</h4><ul><li>移动端需额外适配</li><li>初版开发量大</li></ul></div>
+    </div>
+  </div>
+  <div class="option" onclick="select(this)" data-choice="d">
+    <span class="recommended">⭐ 推荐</span>
+    <div class="letter">D</div>
+    <h3>混合方案：全屏主流程 + 抽屉菜单</h3>
+    <p>核心"选饭吃"全屏沉浸式。左上角汉堡菜单打开Drawer访问其他功能。桌面端Drawer常驻为侧边栏。</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>✅ 优点</h4><ul><li>主流程不被干扰</li><li>桌面/移动端自然适配</li><li>功能可达性好</li></ul></div>
+      <div class="cons"><h4>❌ 缺点</h4><ul><li>功能发现性略低</li><li>抽屉层级需注意</li></ul></div>
+    </div>
+  </div>
+</div>
+<p class="footer">💡 选好后告诉我你的选择（A/B/C/D），也可以提修改意见</p>
+<script>
+function select(el) {
+  document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+</script>
+</body>
+</html>

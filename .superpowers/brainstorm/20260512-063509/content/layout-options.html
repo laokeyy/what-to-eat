@@ -1,0 +1,49 @@
+﻿<h2>App 整体布局结构 — 你更喜欢哪种？</h2>
+<p class="subtitle">考虑16个功能的组织方式，哪种导航更顺手</p>
+
+<div class="options" data-multiselect>
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>单页滚动流</h3>
+      <p>所有功能在一个长页面中：顶部开始选 → 中间结果展示 → 底部规则/食谱管理。Tab切换子页面（规则、食谱、历史）。类似抖音的沉浸感，打开就进入"问答流"。</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul><li>打开即用，零学习成本</li><li>沉浸式体验，减少跳出</li><li>适合移动端H5</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>功能多时页面拥挤</li><li>桌面端利用率低</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>底部Tab导航（移动端优先）</h3>
+      <p>5个Tab：🎲 选饭吃 / 📋 我的食谱 / ⚙️ 规则 / 👤 我的（历史/黑白名单/年度报告）/ 🔮 发现（盲盒/挑战/饭搭子）。类似美团/饿了么的Tab结构。</p>
+      <div class="pros-cons">
+        <div class="left"><h4>Pros</h4><ul><li>功能分区清晰</li><li>用户心智模型熟悉</li><li>每Tab独立状态管理</li></ul></div>
+        <div class="right"><h4>Cons</h4><ul><li>"选饭吃"之外的Tab打开率低</li><li>Tab间切换打断上下文</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>侧边栏 + 主内容区（桌面端优先）</h3>
+      <p>左侧垂直导航栏（折叠/展开），右侧大内容区。适合桌面端 + 响应式适配移动端。主区域始终显示"选饭吃"流程，侧栏快速跳转管理页面。</p>
+      <div class="pros-cons">
+        <div class="left"><h4>Pros</h4><ul><li>桌面端体验最佳</li><li>导航不占主区域空间</li><li>易于扩展更多功能</li></ul></div>
+        <div class="right"><h4>Cons</h4><ul><li>移动端需额外适配</li><li>初版开发量大</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="option" data-choice="d" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>混合：主流程全屏 + 抽屉式侧菜单</h3>
+      <p>核心"选饭吃"流程全屏沉浸式，其他功能（规则/食谱/历史/设置）通过左上角汉堡菜单打开Drawer抽屉。桌面端Drawer常驻为侧边栏。</p>
+      <div class="pros-cons">
+        <div class="left"><h4>Pros</h4><ul><li>主流程不被干扰</li><li>桌面/移动端自然适配</li><li>功能可达性好</li></ul></div>
+        <div class="right"><h4>Cons</h4><ul><li>功能发现性略低</li><li>抽屉嵌套层级需注意</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
