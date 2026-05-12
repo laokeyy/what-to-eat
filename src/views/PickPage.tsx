@@ -151,8 +151,15 @@ export const PickPage: React.FC = () => {
       {phase === 'spinning' && <SlotMachine onComplete={handleSpin} />}
 
       {phase === 'result' && finalResult && (
-        <ResultCard food={finalResult} spinCount={spinCount} maxSpins={maxSpins}
-          onConfirm={handleConfirm} onReSpin={handleReSpin} />
+        <>
+          <ResultCard food={finalResult} spinCount={spinCount} maxSpins={maxSpins}
+            onConfirm={handleConfirm} onReSpin={handleReSpin} />
+          <div className="flex justify-center mt-4">
+            <button onClick={goHome}
+              className="text-sm text-gray-500 hover:text-gray-300 transition-colors"
+            >🏠 返回重新选</button>
+          </div>
+        </>
       )}
 
       {phase === 'result' && !finalResult && (
