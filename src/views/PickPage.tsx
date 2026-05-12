@@ -81,6 +81,13 @@ export const PickPage: React.FC = () => {
     setQuickAddOpen(false)
   }
 
+  const goHome = () => {
+    resetFlow()
+    setRestartKey(k => k + 1)
+    setReviewOpen(false)
+    setQuickAddOpen(false)
+  }
+
   const cycleHealthMode = () => {
     const modes: HealthMode[] = ['normal', 'healthy', 'junk']
     const idx = modes.indexOf(healthMode)
