@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AppLayout } from './components/layout/AppLayout'
 import { PickPage } from './views/PickPage'
 import { RecipesPage } from './views/RecipesPage'
@@ -8,7 +8,7 @@ import { DiscoverPage } from './views/DiscoverPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Navigate to="/pick" replace />} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/discover" element={<DiscoverPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
