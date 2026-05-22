@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎲 这顿吃什么
 
-Currently, two official plugins are available:
+**用排除法帮你决定外卖，告别选择困难症**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[在线体验](https://what-to-eat-one-lyart.vercel.app) · [GitHub Pages](https://laokeyy.github.io/what-to-eat/)
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ 核心功能
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🧠 智能排除式问答
+通过 5 个问题逐步排除不想要的，30+ 题库随机组合，每次不一样
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎰 老虎机抽选动画
+酷炫滚动动画随机抽出最终结果
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 📋 食谱管理
+自定义添加爱吃的外卖，冷冻/解冻管理
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🚫 黑白名单
+拉黑踩雷的店，收藏常吃店，记录原因
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📐 规则引擎
+自定义规则：不吃辣、工作日不火锅、预算限制等
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🩺 健康模式
+正常/健康/放纵三种模式切换
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🌤️ 天气感知
+根据天气推荐：下雨推热汤，大热天推冷食
+
+### 📱 响应式
+桌面侧边栏 + 移动端汉堡菜单，深色主题
+
+---
+
+## 🚀 本地运行
+
+```bash
+git clone https://github.com/laokeyy/what-to-eat.git
+cd what-to-eat
+npm install
+npm run dev
+
+---
+
+### 🏗️ 技术栈
+React 19 + TypeScript + Vite + Zustand + Tailwind CSS + React Router
+
+**所有内容均为ai生成**
